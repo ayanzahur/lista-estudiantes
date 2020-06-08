@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Estudiante } from './estudiante';
+import { ESTUDIANTES } from '../lista-estudiantes';
 
 
 @Component({
@@ -8,13 +9,19 @@ import { Estudiante } from './estudiante';
   styleUrls: ['./estudiantes.component.css']
 })
 export class EstudiantesComponent implements OnInit {
-estudiante: Estudiante = {
-    id: 1,
-    nombre: 'Juan López'
-     };
+  estudiantes = ESTUDIANTES;
+  selectedEstudiante:Estudiante;
   constructor() { }
 
   ngOnInit() {
   }
-
+  
+  onSelect(estudiante: Estudiante): void {
+    this.selectedEstudiante = estudiante;
+  }
 }
+
+
+
+
+
